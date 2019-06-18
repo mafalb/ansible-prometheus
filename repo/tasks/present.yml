@@ -3,7 +3,7 @@
 
 - name: RPM-GPG-KEY is present
   copy:
-    src: prometheus-rpm-centos-A75C582EF1D23E56.pub.gpg
+    src: RPM-GPG-KEY-prometheus-rpm
     dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-PROMETHEUS
 
 - name: RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }} is imported

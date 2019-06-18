@@ -1,14 +1,8 @@
 ---
-- debug: msg="{{ prometheus_packages[item]}}"
-  loop: "{{ prometheus_modules }}"
-  tags:
-    - never
-    - debug
     
 - name: prometheus is installed
-  loop: "{{ prometheus_modules }}"
   package:
-    name: "{{ prometheus_packages[item]}}"
+    name: prometheus2
     state: present
 
 - name: prometheus is started
@@ -16,4 +10,5 @@
     name: prometheus
     state: started
     enabled: true
+
 ...

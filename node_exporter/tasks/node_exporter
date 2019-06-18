@@ -1,0 +1,12 @@
+---
+- name: node_exporter is installed
+  package:
+    name: node_exporter
+    state: present
+
+- name: node exporter is started
+  service:
+    name: node_exporter
+    state: started
+    enabled: true
+...
