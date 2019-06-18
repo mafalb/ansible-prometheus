@@ -1,4 +1,0 @@
----
-prometheus_modules:
-  - node_exporter
-...

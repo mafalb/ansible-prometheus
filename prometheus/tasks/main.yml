@@ -5,6 +5,13 @@
     name: prometheus2
     state: present
 
+- name: prometheus is configured
+  template:
+    src: prometheus.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+    backup: true
+  notify: reload prometheus
+
 - name: prometheus is started
   service:
     name: prometheus

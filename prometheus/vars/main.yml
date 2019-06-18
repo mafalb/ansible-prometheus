@@ -1,0 +1,3 @@
+---
+prometheus_packages:
+  prometheus: prometheus2
