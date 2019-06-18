@@ -1,0 +1,17 @@
+[prometheus-rpm_release]
+name=prometheus-rpm_release
+baseurl=https://packagecloud.io/prometheus-rpm/release/el/{{ ansible_distribution_major_version }}/$basearch
+repo_gpgcheck=1
+gpgcheck=1
+enabled=1
+#gpgkey=https://packagecloud.io/prometheus-rpm/release/gpgkey
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PROMETHEUS
+
+[prometheus-rpm_release-source]
+name=prometheus-rpm_release-source
+baseurl=https://packagecloud.io/prometheus-rpm/release/el/{{ ansible_distribution_major_version }}/SRPMS
+repo_gpgcheck=1
+gpgcheck=1
+enabled=1
+#gpgkey=https://packagecloud.io/prometheus-rpm/release/gpgkey
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PROMETHEUS

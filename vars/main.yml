@@ -1,0 +1,4 @@
+---
+prometheus_packages:
+  server: prometheus2
+  node_exporter: node_exporter

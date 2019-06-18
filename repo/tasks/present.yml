@@ -1,0 +1,20 @@
+# vim: set ft=yaml ts=2:
+---
+
+- name: RPM-GPG-KEY is present
+  copy:
+    src: prometheus-rpm-centos-A75C582EF1D23E56.pub.gpg
+    dest: /etc/pki/rpm-gpg/RPM-GPG-KEY-PROMETHEUS
+
+- name: RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }} is imported
+  rpm_key:
+    key: /etc/pki/rpm-gpg/RPM-GPG-KEY-PROMETHEUS
+    state: present
+
+- name: yum repo is present
+  template:
+    src: prometheus.repo
+    dest: /etc/yum.repos.d/
+    backup: true
+
+...

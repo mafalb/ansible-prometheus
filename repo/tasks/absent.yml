@@ -1,0 +1,19 @@
+# vim: set ft=yaml ts=2:
+---
+
+- name: repo file is absent
+  file:
+    path: /etc/yum.repos.d/prometheus.repo
+    state: absent
+
+- name: RPM-GPG-KEY is absent
+  rpm_key:
+    key: A75C582EF1D23E56
+    state: absent
+
+- name: RPM-GPG-KEY is present
+  file:
+    path: /etc/pki/rpm-gpg/RPM-GPG-KEY-PROMETHEUS
+    state: absent
+
+...
